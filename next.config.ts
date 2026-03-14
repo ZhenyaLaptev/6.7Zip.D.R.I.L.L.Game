@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: 'export',
   basePath: '/6.7Zip.D.R.I.L.L.Game',
   images: {

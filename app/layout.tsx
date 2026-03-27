@@ -7,11 +7,28 @@ import Providers from "@/app/Components/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
+/**
+ * Метадані сторінок сайту для SEO та браузерної вкладки.
+ *
+ * @property title - Заголовок вкладки браузера
+ * @property description - Опис сайту для пошукових систем
+ */
 export const metadata: Metadata = {
   title: "D.R.I.L.L. - Космічний бур",
   description: "Офіційний сайт гри d.r.i.l.l.",
 };
 
+/**
+ * Кореневий layout усього застосунку Next.js.
+ *
+ * Обгортає всі сторінки спільною структурою:
+ * - {@link Header} верхня навігаційна панель
+ * - {@link Footer} нижній колонтитул
+ * - {@link Providers} глобальні контекст-провайдери
+ *
+ * @param children - Вміст поточної сторінки, який рендериться у `<main>`
+ * @returns Повна HTML-структура сторінки з підключеними шрифтами та стилями
+ */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="uk">

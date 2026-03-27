@@ -1,5 +1,13 @@
 import GameCard from "@/app/Components/GameCard";
 
+/**
+ * Сторінка з переліком ігрових проєктів команди.
+ *
+ * Наразі відображає єдиний проєкт гру d.r.i.l.l. 
+ * у вигляді картки {@link GameCard} з описом та посиланням.
+ *
+ * @returns Розмітка сторінки проєктів
+ */
 export default function Games() {
   return (
     <div className="max-w-4xl mx-auto">

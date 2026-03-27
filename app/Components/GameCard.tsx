@@ -1,6 +1,20 @@
 import Link from "next/link";
 import { GameCardProps } from "../types/GameCardProps";
 
+/**
+ * Картка окремої гри у розділі проєктів.
+ *
+ * Відображає горизонтальний блок із зображенням або заглушкою,
+ * назвою, описом та кнопкою-посиланням на детальну сторінку гри.
+ *
+ * @param props - Пропси компонента {@link GameCardProps}
+ * @param props.title - Назва гри
+ * @param props.description - Короткий опис гри (обрізається до 3 рядків)
+ * @param props.link - URL детальної сторінки гри
+ * @param props.imageSrc - Необов'язковий шлях до обкладинки гри;
+ *   якщо не передано відображається текстова заглушка з назвою
+ * @returns Розмітка картки гри
+ */
 export default function GameCard({ title, description, link, imageSrc }: GameCardProps) {
   return (
     <div className="bg-slate-900 rounded-2xl border border-slate-700 overflow-hidden flex flex-col md:flex-row shadow-lg">

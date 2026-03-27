@@ -4,17 +4,42 @@ import { useState } from "react";
 import Link from "next/link";
 import { useNews } from "@/app/context/NewsContext";
 
+/**
+ * Сторінка додавання нової новини «Термінал Зв'язку».
+ *
+ * Надає форму з трьома полями: заголовок, дата та опис новини.
+ * Після успішного відправлення показує підтвердження на 3 секунди
+ * та очищає форму.
+ *
+ * Використовує {@link useNews} для запису новини у глобальний контекст.
+ *
+ * @returns Розмітка сторінки з формою додавання новини
+ */
 export default function AddNews() {
   const { addNews } = useNews();
 
+  /**
+   * Стан полів форми.
+   *
+   * @property title - Заголовок новини
+   * @property date - Дата публікації (зоряна дата)
+   * @property description - Текст повідомлення
+   */
   const [formData, setFormData] = useState({
     title: "",
     date: "",
     description: "",
   });
 
+  /** Прапорець успішного відправлення форми. Показує підтвердження на 3 секунди. */
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  /**
+   * Обробник відправлення форми.
+   * Додає нову новину через контекст, скидає поля та запускає таймер підтвердження.
+   *
+   * @param e - Подія відправлення HTML-форми
+   */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -29,6 +54,12 @@ export default function AddNews() {
     setTimeout(() => setIsSubmitted(false), 3000);
   };
 
+  /**
+   * Універсальний обробник зміни полів форми.
+   * Оновлює відповідне поле у стані `formData` за атрибутом `name` елемента.
+   *
+   * @param e - Подія зміни значення поля введення або текстового поля
+   */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };

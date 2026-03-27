@@ -5,12 +5,30 @@ import Link from "next/link";
 import NewsCard from "@/app/Components/NewsCard";
 import { useNews } from "@/app/context/NewsContext";
 
+/**
+ * Головна сторінка сайту гри D.R.I.L.L.
+ *
+ * Відображає:
+ * - Hero-секцію з автоматичним слайдером фонових зображень
+ * - Стрічку останніх новин із можливістю їх видалення
+ *
+ * Використовує контекст {@link useNews} для отримання та видалення новин.
+ *
+ * @returns Розмітка головної сторінки
+ */
 export default function Home() {
   const { news, deleteNews } = useNews();
-  
+
+  /** Масив шляхів до фонових зображень hero-секції */
   const heroImages = ["/2.png", "/3.png", "/4.png"];
+
+  /** Індекс активного слайду hero-секції */
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  /**
+   * Запускає автоматичну зміну слайдів кожні 5 секунд.
+   * Очищає інтервал при розмонтуванні компонента.
+   */
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
@@ -46,6 +64,10 @@ export default function Home() {
           
           <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2">
             {heroImages.map((_, index) => (
+              /**
+               * Кнопка навігації слайдера.
+               * При натисканні переключає hero-секцію на відповідний слайд.
+               */
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}

@@ -1,5 +1,13 @@
 import Link from "next/link";
 
+/**
+ * Верхня навігаційна панель сайту.
+ *
+ * Містить логотип-посилання на головну сторінку та навігаційне меню
+ * з посиланнями на розділи: Головна, Ігри, Команда.
+ *
+ * @returns Розмітка `<header>` із логотипом та навігацією
+ */
 export default function Header() {
   return (
     <header className="bg-slate-900 border-b border-orange-500/30 p-4">
@@ -17,11 +25,9 @@ export default function Header() {
           <Link href="/" className="hover:text-orange-400 transition">
             Головна
           </Link>
-
           <Link href="/games" className="hover:text-orange-400 transition">
             Ігри
           </Link>
-
           <Link href="/team" className="hover:text-orange-400 transition">
             Команда
           </Link>

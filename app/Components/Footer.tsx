@@ -1,10 +1,18 @@
 import Link from "next/link";
-
+/**
+ * Компонент нижнього колонтитула (footer) сайту "d.r.i.l.l."
+ * * @remarks
+ * Містить динамічне відображення поточного року, статус системи та
+ * навігаційні посилання на соціальні платформи проекту.
+ * * @component
+ */
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 border-t border-slate-800 p-6 mt-12 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-50"></div>
-      
+      <footer 
+        className="p-6 mt-12"
+        style={{ background: "var(--card)", borderColor: "var(--border)" }}
+      >
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-50"></div>   
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-slate-400 text-base">
         <div className="mb-4 md:mb-0 text-center md:text-left">
           <p>© {new Date().getFullYear()} D.R.I.L.L. Studio. Всі права захищено.</p>

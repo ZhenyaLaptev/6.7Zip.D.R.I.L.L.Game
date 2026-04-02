@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/app/Components/Header";
 import Footer from "@/app/Components/Footer";
 import Providers from "@/app/Components/Providers";
+import ProvidersTheme from "./Components/ProvidersTheme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,14 +15,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="uk">
-      <body className={`${inter.className} bg-slate-950 text-slate-200 min-h-screen flex flex-col`}>
+    <html lang="uk" suppressHydrationWarning>
+        <body className={`${inter.className} min-h-screen flex flex-col`} 
+        style={{ background: "var(--bg)", color: "var(--text)" }}>
         <Providers>
+          <ProvidersTheme>
           <Header />
           <main className="flex-grow container mx-auto p-4 md:p-8">
             {children}
           </main>
           <Footer />
+          </ProvidersTheme>
         </Providers>
       </body>
     </html>

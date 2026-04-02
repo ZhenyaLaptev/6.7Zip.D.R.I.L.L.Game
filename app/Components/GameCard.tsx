@@ -1,10 +1,23 @@
 import Link from "next/link";
 import { GameCardProps } from "../types/GameCardProps";
-
+/**
+ * Компонент картки ігор (GameCard) сайту "d.r.i.l.l."
+ * * @remarks
+ * Містить інформацію про кожну розроблену гру компанією,
+ * зокрема її логотип текстовий опис та подробиці розробки.
+ * @param props - Властивості компонента
+ * @param props.title - Заголовок з назвою гри
+ * @param props.description - Короткий опис особливостей гри
+ * @param props.link - Динамічне посилання на сторінку з грою
+ * @param props.imageSrc - Файл зображення логотипу гри
+ * * @component
+ */
 export default function GameCard({ title, description, link, imageSrc }: GameCardProps) {
   return (
-    <div className="bg-slate-900 rounded-2xl border border-slate-700 overflow-hidden flex flex-col md:flex-row shadow-lg">
-      
+      <div 
+        className="rounded-xl p-6 border"
+        style={{ background: "var(--card)", borderColor: "var(--border)" }}
+      >      
       <div className="md:w-1/3 bg-slate-800 flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-700 relative min-h-[200px]">
         {imageSrc ? (
           <img 

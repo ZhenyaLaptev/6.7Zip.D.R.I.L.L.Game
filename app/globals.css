@@ -28,5 +28,19 @@ body {
 footer{
   font-size: 25px;
 }
+:root {
+  --accent: #f97316;
+}
 
+[data-theme="light"] {
+  --accent: #ea580c;
+}
 
+.link {
+  color: var(--text);
+  transition: 0.2s;
+}
+
+.link:hover {
+  color: var(--accent);
+}

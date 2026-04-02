@@ -1,0 +1,7 @@
+"use client";
+
+import { ThemeProvider } from "@/app/context/ThemeContext";
+
+export default function ProvidersTheme({ children }: { children: React.ReactNode }) {
+  return <ThemeProvider>{children}</ThemeProvider>;
+}

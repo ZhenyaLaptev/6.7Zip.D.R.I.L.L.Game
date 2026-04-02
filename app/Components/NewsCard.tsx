@@ -1,8 +1,23 @@
 import { NewsCardProps } from "../types/NewsCardProps";
+/**
+ * Компонент картки з новинами (NewsCard) сайту "d.r.i.l.l."
+ * * @remarks
+ * Містить останні новини з розробки ігор 
+ * та загальних новин від команди розробників.
+ * @param props - Властивості компонента
+ * @param props.id - Номер новини
+ * @param props.date - Дата публікації
+ * @param props.title - Заголовок новини
+ * @param props.onDelete - Можливість видалення новини на сторінці
+ * * @component
+ */
 export default function NewsCard({ id, date, title, description, onDelete }: NewsCardProps) {
   return (
     <article className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 relative group transition hover:border-slate-600">
-      <div className="flex justify-between items-start">
+        <div 
+          className="rounded-xl p-6 border"
+          style={{ background: "var(--card)", borderColor: "var(--border)" }}
+        >        
         <span className="text-orange-500 text-sm font-bold">{date}</span>
         <button 
           onClick={() => onDelete(id)}

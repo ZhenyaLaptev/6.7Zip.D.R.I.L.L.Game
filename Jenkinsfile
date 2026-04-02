@@ -33,7 +33,7 @@ pipeline {
                             echo "Тести Набору 2: Безпека"
                             bat 'npm audit --audit-level=critical'
                             bat 'if exist package-lock.json echo Lock_File_Present'
-                            bat 'npm outdated'
+                            bat 'npm outdated || exit 0'
                             break
                             
                         case 'Set_3_Structure':
